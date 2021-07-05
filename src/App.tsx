@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 
+function countInitial() {
+  console.log('run function');
+  return 4;
+}
 
 function App() {
-  const [count, setCount] = useState(4)
+  const [count, setCount] = useState(() => countInitial())
 
   function decreaseCount() {
     setCount(prevCount => prevCount - 1)
